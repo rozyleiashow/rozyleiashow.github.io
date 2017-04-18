@@ -1,0 +1,48 @@
+.save-date
+  position relative
+  .mobile
+    display none
+  .desktop
+    display block
+  +below(rupture.desktop-cutoff)
+    .mobile
+      display block
+    .desktop
+      display none
+  h1
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    height: 4rem;
+    line-height: 1;
+    font-size: 4rem;
+    z-index: 9;
+    color: #fff;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+.mosaic
+  width 100%
+  height auto
+  position relative
+  clear fix
+  img
+    column(1/10, cycle: 10, gutter: 0)
+    height auto
+    +below(rupture.desktop-cutoff)
+      column(1/5, cycle: 5, gutter: 0)
+  &:before
+    content ''
+    display block
+    background green
+    opacity 0.5
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+/* Don't show shadows when selecting text */
+::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
+::selection { background: #5af; color: #fff; text-shadow: none; }
